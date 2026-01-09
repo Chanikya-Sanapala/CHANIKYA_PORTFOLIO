@@ -5,18 +5,18 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-apple-blue/20 rounded-full blur-[120px] opacity-20 animate-pulse" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8">
-        <div className="space-y-4 animate-fade-in-up">
+        <div className="space-y-4">
           <h2 className="text-apple-blue font-semibold tracking-wider text-sm uppercase">Full Stack Developer</h2>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-white leading-tight">
             Sanapala Chanikya
           </h1>
         </div>
 
-        <p className="text-xl md:text-2xl text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:200ms]">
+        <p className="text-xl md:text-2xl text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed">
           Building scalable, user-friendly web applications with precision and passion.
         </p>
 
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4">
           <a href="#projects" className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-transform hover:scale-105 active:scale-95">
             View Work
           </a>
