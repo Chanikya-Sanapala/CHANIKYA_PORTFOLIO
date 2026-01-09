@@ -12,11 +12,11 @@ export default function Hero() {
           </h1>
         </div>
 
-        <p className="text-xl md:text-2xl text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:200ms] opacity-0">
+        <p className="text-xl md:text-2xl text-gray-300 font-normal max-w-2xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:200ms]">
           Building scalable, user-friendly web applications with precision and passion.
         </p>
 
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:400ms] opacity-0">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-center gap-4 animate-fade-in-up [animation-delay:400ms]">
           <a href="#projects" className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-transform hover:scale-105 active:scale-95">
             View Work
           </a>
