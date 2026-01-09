@@ -33,7 +33,7 @@ function Moon() {
 
 const MoonBackground = () => {
     return (
-        <div className="fixed inset-0 z-[-1] bg-black">
+        <div className="fixed inset-0 z-0 bg-black">
             <Canvas camera={{ position: [0, 0, 5], fov: 45 }} dpr={[1, 1.5]}>
                 {/* Lights */}
                 <ambientLight intensity={0.1} />
