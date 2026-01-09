@@ -11,6 +11,11 @@ export default async function handler(req, res) {
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+        console.error('ERROR: Missing GMAIL_USER or GMAIL_PASS environment variables.');
+        return res.status(500).json({ message: 'Server configuration error: Missing email credentials.' });
+    }
+
     try {
         const transporter = nodemailer.createTransport({
             service: 'gmail',

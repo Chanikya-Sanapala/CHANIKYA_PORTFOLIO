@@ -403,7 +403,18 @@ export default function BentoGrid() {
 
         }, containerRef);
 
-        return () => ctx.revert();
+
+
+        // Refresh ScrollTrigger after a short delay to ensure correct positioning on mobile
+        // This fixes the issue where elements stay invisible (opacity: 0) on phones
+        const timer = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 1000);
+
+        return () => {
+            ctx.revert();
+            clearTimeout(timer);
+        };
     }, []);
 
     return (
