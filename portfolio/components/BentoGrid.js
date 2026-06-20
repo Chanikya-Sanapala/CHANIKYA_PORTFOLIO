@@ -9,12 +9,40 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
     {
+        title: "LeafyBooks",
+        category: "Full Stack / AI",
+        description: "AI-Integrated Full-Stack E-commerce Platform built using Angular and Spring Boot.",
+        gradient: "from-green-500/20 to-teal-500/20",
+        images: ["/leafybooks.png"],
+        href: "#",
+        challenge: "Developing a fully integrated, secure e-commerce bookstore that leverages cloud databases and provides modern AI-powered recommendations in real-time.",
+        solution: "Built a microservices backend with Spring Boot & MongoDB Atlas and a fast Angular frontend. Integrated Groq API for virtual assistance, Spring Security with JWT & OAuth 2.0 for security, and containerized the system with Docker.",
+        features: [
+            "Built and deployed a scalable bookstore using Angular and Spring Boot with MongoDB Atlas",
+            "Implemented secure authentication using Spring Security, JWT, and Google OAuth 2.0",
+            "Integrated AI-powered virtual assistant using Groq API for personalized recommendations",
+            "Optimized frontend performance using Angular Vite-based build system",
+            "Containerized backend with Docker and deployed using Render and Vercel",
+            "Integrated Google Books API for dynamic book data"
+        ],
+        tech: ["Angular", "Spring Boot", "MongoDB", "Java", "JWT", "OAuth 2.0", "Docker", "Groq API"]
+    },
+    {
         title: "Food Delivery App",
         category: "Full Stack",
         description: "Responsive web app with PHP & MySQL backend.",
         gradient: "from-orange-500/20 to-red-500/20",
         images: ["/food-delivery.png"],
-        href: "https://github.com/Chanikya-Sanapala/Online_Food_Delivery"
+        href: "https://github.com/Chanikya-Sanapala/Online_Food_Delivery",
+        challenge: "Building a user-friendly and responsive food catalog system with persistent cart state and administrative CRUD controls.",
+        solution: "Utilized standard PHP backend architecture paired with MySQL. Implemented dynamic user profiles and complete session management.",
+        features: [
+            "Dynamic profile dashboards for users",
+            "Robust CRUD operations for catalog management",
+            "Real-time session updates and order flow",
+            "Responsive layout adapting to all mobile devices"
+        ],
+        tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "XAMPP"]
     },
     {
         title: "Pneumonia Detection AI",
@@ -22,7 +50,15 @@ const projects = [
         description: "VGG16-based model for detecting pneumonia from X-rays with 95%+ accuracy.",
         gradient: "from-teal-500/20 to-emerald-500/20",
         images: ["/pneumonia-slide-1.png", "/pneumonia-slide-2.png"],
-        href: "https://github.com/Chanikya-Sanapala/Pneumonia-Detection-using-Deep-Learning"
+        href: "https://github.com/Chanikya-Sanapala/Pneumonia-Detection-using-Deep-Learning",
+        challenge: "Accurately identifying anomalies in medical imaging data with high precision to support early diagnostics.",
+        solution: "Trained and optimized a VGG16 Convolutional Neural Network model on chest X-ray images, achieving over 95% validation accuracy.",
+        features: [
+            "Deep Learning VGG16 architecture",
+            "95%+ prediction accuracy on validation sets",
+            "Image preprocessing and data augmentation pipeline"
+        ],
+        tech: ["Python", "TensorFlow", "Keras", "VGG16", "OpenCV"]
     },
     {
         title: "Job Portal",
@@ -30,7 +66,15 @@ const projects = [
         description: "Next.js & Tailwind based job platform.",
         gradient: "from-blue-500/20 to-cyan-500/20",
         images: ["/job-portal.png"],
-        href: "#"
+        href: "#",
+        challenge: "Creating distinct workflows and dashboards for recruiters and job seekers within a unified, modern web interface.",
+        solution: "Engineered a Next.js single-page application utilizing React hooks for client-side state, styled with Tailwind CSS.",
+        features: [
+            "Tailored dashboards for recruiters to post jobs",
+            "Interactive search and filter options for job seekers",
+            "Mock application tracking system using local storage state"
+        ],
+        tech: ["Next.js", "React", "Tailwind CSS", "JavaScript"]
     },
     {
         title: "Solar Tracker",
@@ -38,7 +82,15 @@ const projects = [
         description: "Arduino-based dual axis tracking system.",
         gradient: "from-yellow-500/20 to-orange-500/20",
         images: ["/solar-tracker-1.jpg", "/solar-tracker-2.png"],
-        href: "#"
+        href: "#",
+        challenge: "Optimizing solar panel angles dynamically to maximize light absorption throughout the day without high power consumption.",
+        solution: "Programmed an Arduino UNO microcontroller to read input from LDR sensors and actuate dual servo motors for alignment.",
+        features: [
+            "Automatic orientation using four LDR light-dependent resistors",
+            "Dual-axis motor rotation for complete tracking capability",
+            "Implements logic to yield up to 30% increase in energy generation"
+        ],
+        tech: ["Arduino", "C++", "Electronics", "IoT"]
     }
 ];
 
@@ -177,7 +229,7 @@ function ProjectModal({ project, onClose }) {
                                 The Challenge
                             </h3>
                             <p className="text-gray-400 text-sm leading-relaxed">
-                                Designing a solution that addresses complex user needs while maintaining high performance and scalability. Focused on creating an intuitive interface that simplifies navigation.
+                                {project.challenge || "Designing a solution that addresses complex user needs while maintaining high performance and scalability. Focused on creating an intuitive interface that simplifies navigation."}
                             </p>
                         </div>
                         <div>
@@ -186,10 +238,43 @@ function ProjectModal({ project, onClose }) {
                                 The Solution
                             </h3>
                             <p className="text-gray-400 text-sm leading-relaxed">
-                                Implemented a robust architecture using modern technologies. Optimized database queries and leveraged server-side rendering for fast load times.
+                                {project.solution || "Implemented a robust architecture using modern technologies. Optimized database queries and leveraged server-side rendering for fast load times."}
                             </p>
                         </div>
                     </div>
+
+                    {project.features && project.features.length > 0 && (
+                        <div className="border-t border-white/10 pt-8">
+                            <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
+                                <svg className="w-5 h-5 text-apple-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+                                Key Features
+                            </h3>
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                {project.features.map((feature, idx) => (
+                                    <li key={idx} className="flex items-start gap-2 text-gray-400 text-sm leading-relaxed">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-apple-blue mt-2 shrink-0" />
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {project.tech && project.tech.length > 0 && (
+                        <div className="border-t border-white/10 pt-8">
+                            <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
+                                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                                Technologies Used
+                            </h3>
+                            <div className="flex flex-wrap gap-2">
+                                {project.tech.map((t, idx) => (
+                                    <span key={idx} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-white/80">
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    )}
 
                     <div className="pt-8 border-t border-white/10 flex flex-wrap gap-4">
                         {project.href !== "#" && (
