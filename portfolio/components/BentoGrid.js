@@ -15,8 +15,6 @@ const projects = [
         gradient: "from-green-500/20 to-teal-500/20",
         images: ["/leafybooks.png"],
         href: "#",
-        liveLink: "https://virtual-book-store-ruby.vercel.app/",
-        githubLink: "https://github.com/Chanikya-Sanapala/CHANIKYA_PORTFOLIO",
         challenge: "Developing a fully integrated, secure e-commerce bookstore that leverages cloud databases and provides modern AI-powered recommendations in real-time.",
         solution: "Built a microservices backend with Spring Boot & MongoDB Atlas and a fast Angular frontend. Integrated Groq API for virtual assistance, Spring Security with JWT & OAuth 2.0 for security, and containerized the system with Docker.",
         features: [
