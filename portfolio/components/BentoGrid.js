@@ -15,6 +15,8 @@ const projects = [
         gradient: "from-green-500/20 to-teal-500/20",
         images: ["/leafybooks.png"],
         href: "#",
+        liveLink: "https://virtual-book-store-ruby.vercel.app/",
+        githubLink: "https://github.com/Chanikya-Sanapala/CHANIKYA_PORTFOLIO",
         challenge: "Developing a fully integrated, secure e-commerce bookstore that leverages cloud databases and provides modern AI-powered recommendations in real-time.",
         solution: "Built a microservices backend with Spring Boot & MongoDB Atlas and a fast Angular frontend. Integrated Groq API for virtual assistance, Spring Security with JWT & OAuth 2.0 for security, and containerized the system with Docker.",
         features: [
@@ -34,6 +36,7 @@ const projects = [
         gradient: "from-orange-500/20 to-red-500/20",
         images: ["/food-delivery.png"],
         href: "https://github.com/Chanikya-Sanapala/Online_Food_Delivery",
+        githubLink: "https://github.com/Chanikya-Sanapala/Online_Food_Delivery",
         challenge: "Building a user-friendly and responsive food catalog system with persistent cart state and administrative CRUD controls.",
         solution: "Utilized standard PHP backend architecture paired with MySQL. Implemented dynamic user profiles and complete session management.",
         features: [
@@ -51,6 +54,7 @@ const projects = [
         gradient: "from-teal-500/20 to-emerald-500/20",
         images: ["/pneumonia-slide-1.png", "/pneumonia-slide-2.png"],
         href: "https://github.com/Chanikya-Sanapala/Pneumonia-Detection-using-Deep-Learning",
+        githubLink: "https://github.com/Chanikya-Sanapala/Pneumonia-Detection-using-Deep-Learning",
         challenge: "Accurately identifying anomalies in medical imaging data with high precision to support early diagnostics.",
         solution: "Trained and optimized a VGG16 Convolutional Neural Network model on chest X-ray images, achieving over 95% validation accuracy.",
         features: [
@@ -277,7 +281,23 @@ function ProjectModal({ project, onClose }) {
                     )}
 
                     <div className="pt-8 border-t border-white/10 flex flex-wrap gap-4">
-                        {project.href !== "#" && (
+                        {project.liveLink && (
+                            <Link href={project.liveLink} legacyBehavior>
+                                <a target="_blank" className="px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors inline-flex items-center gap-2">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                                    Live Demo
+                                </a>
+                            </Link>
+                        )}
+                        {project.githubLink && (
+                            <Link href={project.githubLink} legacyBehavior>
+                                <a target="_blank" className="px-6 py-3 bg-[#2c2c2e] text-white font-medium rounded-full hover:bg-[#3a3a3c] transition-colors inline-flex items-center gap-2 border border-white/10">
+                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.477 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.528 1.03 1.528 1.03.89 1.53 2.341 1.543 2.914 1.186.09-.924.349-1.543.635-1.9-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.988 1.029-2.688-.103-.253-.446-1.27.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.597 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .26.18.57.688.482A10.019 10.019 0 0022 12c0-5.516-4.477-10-10-10z" clipRule="evenodd" /></svg>
+                                    GitHub Repo
+                                </a>
+                            </Link>
+                        )}
+                        {!project.liveLink && !project.githubLink && project.href && project.href !== "#" && (
                             <Link href={project.href} legacyBehavior>
                                 <a target="_blank" className="px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors inline-flex items-center gap-2">
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
